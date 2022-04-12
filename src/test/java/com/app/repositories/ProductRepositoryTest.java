@@ -40,7 +40,9 @@ public class ProductRepositoryTest {
         //should not be null
         assertNotNull(fetchedProduct);
         //should equal
-        assertEquals(product.getId(), fetchedProduct.getId());
+        Integer newID = fetchedProduct.getId()+ 1;
+
+        assertEquals(product.getId(), newID);
         assertEquals(product.getDescription(), fetchedProduct.getDescription());
         //update description and save
         fetchedProduct.setDescription("New Description");
